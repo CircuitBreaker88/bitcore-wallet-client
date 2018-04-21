@@ -1,0 +1,26 @@
+{
+  "name": "bitcore-wallet-client-innova",
+  "main": "index.js",
+  "version": "2.1.1",
+  "homepage": "https://github.com/innovacoin/bitcore-wallet-client-innova",
+  "authors": ["BitPay Inc"],
+  "description": "Client for bitcore-wallet-service-innova",
+  "keywords": [
+    "innova",
+    "copay-innova",
+    "multisig",
+    "wallet",
+    "client",
+    "bitcore-innova"
+  ],
+  "ignore": [
+    "**/.*",
+    "lib",
+    "node_modules",
+    "Gruntfile.js",
+    "Makefile",
+    "index.js",
+    "test",
+    "Makefile"
+  ]
+}
