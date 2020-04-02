@@ -15,16 +15,16 @@ var tingodb = require('tingodb')({
 
 var log = require('../lib/log');
 
-var Bitcore = require('bitcore-lib-innova');
+var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
   bch: require('bitcore-lib-cash'),
 };
 
 
-var BitcorePayPro = require('bitcore-payment-protocol-innova');
+var BitcorePayPro = require('bitcore-payment-protocol');
 
-var BWS = require('bitcore-wallet-service-innova');
+var BWS = require('bitcore-wallet-service');
 
 var Common = require('../lib/common');
 var Constants = Common.Constants;

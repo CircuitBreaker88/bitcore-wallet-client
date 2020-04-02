@@ -25251,8 +25251,8 @@ var $ = require('preconditions').singleton();
 var util = require('util');
 var async = require('async');
 var events = require('events');
-var Bitcore = require('bitcore-lib-innova');
-var Mnemonic = require('bitcore-mnemonic-innova');
+var Bitcore = require('bitcore-lib');
+var Mnemonic = require('bitcore-mnemonic');
 var sjcl = require('sjcl');
 var url = require('url');
 var querystring = require('querystring');
@@ -27747,7 +27747,7 @@ API.prototype.createWalletFromOldCopay = function(username, password, blob, cb) 
 module.exports = API;
 
 }).call(this,require("buffer").Buffer)
-},{"../package.json":387,"./common":174,"./credentials":176,"./errors":177,"./log":180,"./paypro":181,"./verifier":182,"async":198,"bip38":203,"bitcore-lib-innova":204,"bitcore-mnemonic-innova":300,"buffer":47,"events":84,"json-stable-stringify":348,"lodash":353,"preconditions":361,"querystring":130,"sjcl":378,"superagent":379,"url":162,"util":167}],172:[function(require,module,exports){
+},{"../package.json":387,"./common":174,"./credentials":176,"./errors":177,"./log":180,"./paypro":181,"./verifier":182,"async":198,"bip38":203,"bitcore-lib":204,"bitcore-mnemonic":300,"buffer":47,"events":84,"json-stable-stringify":348,"lodash":353,"preconditions":361,"querystring":130,"sjcl":378,"superagent":379,"url":162,"util":167}],172:[function(require,module,exports){
 'use strict';
 
 var Constants = {};
@@ -27827,7 +27827,7 @@ var $ = require('preconditions').singleton();
 var sjcl = require('sjcl');
 var Stringify = require('json-stable-stringify');
 
-var Bitcore = require('bitcore-lib-innova');
+var Bitcore = require('bitcore-lib');
 var Address = Bitcore.Address;
 var PrivateKey = Bitcore.PrivateKey;
 var PublicKey = Bitcore.PublicKey;
@@ -28059,15 +28059,15 @@ Utils.buildTx = function(txp) {
 module.exports = Utils;
 
 }).call(this,require("buffer").Buffer)
-},{"./constants":172,"./defaults":173,"bitcore-lib-innova":204,"buffer":47,"json-stable-stringify":348,"lodash":353,"preconditions":361,"sjcl":378}],176:[function(require,module,exports){
+},{"./constants":172,"./defaults":173,"bitcore-lib":204,"buffer":47,"json-stable-stringify":348,"lodash":353,"preconditions":361,"sjcl":378}],176:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
 var $ = require('preconditions').singleton();
 var _ = require('lodash');
 
-var Bitcore = require('bitcore-lib-innova');
-var Mnemonic = require('bitcore-mnemonic-innova');
+var Bitcore = require('bitcore-lib');
+var Mnemonic = require('bitcore-mnemonic');
 var sjcl = require('sjcl');
 
 var Common = require('./common');
@@ -28533,7 +28533,7 @@ Credentials.fromOldCopayWallet = function(w) {
 module.exports = Credentials;
 
 }).call(this,require("buffer").Buffer)
-},{"./common":174,"bitcore-lib-innova":204,"bitcore-mnemonic-innova":300,"buffer":47,"lodash":353,"preconditions":361,"sjcl":378}],177:[function(require,module,exports){
+},{"./common":174,"bitcore-lib":204,"bitcore-mnemonic":300,"buffer":47,"lodash":353,"preconditions":361,"sjcl":378}],177:[function(require,module,exports){
 'use strict';
 
 var _ = require('lodash');
@@ -28687,9 +28687,9 @@ client.Utils = require('./common/utils');
 client.sjcl = require('sjcl');
 
 // Expose bitcore
-client.Bitcore = require('bitcore-lib-innova');
+client.Bitcore = require('bitcore-lib');
 
-},{"./api":171,"./common/utils":175,"./verifier":182,"bitcore-lib-innova":204,"sjcl":378}],180:[function(require,module,exports){
+},{"./api":171,"./common/utils":175,"./verifier":182,"bitcore-lib":204,"sjcl":378}],180:[function(require,module,exports){
 var _ = require('lodash');
 
 var DEFAULT_LOG_LEVEL = 'silent';
@@ -28830,8 +28830,8 @@ module.exports = logger;
 (function (process,Buffer){
 var $ = require('preconditions').singleton();
 
-var Bitcore = require('bitcore-lib-innova');
-var BitcorePayPro = require('bitcore-payment-protocol-innova');
+var Bitcore = require('bitcore-lib');
+var BitcorePayPro = require('bitcore-payment-protocol');
 var PayPro = {};
 
 PayPro._nodeRequest = function(opts, cb) {
@@ -29078,11 +29078,11 @@ PayPro.send = function(opts, cb) {
 module.exports = PayPro;
 
 }).call(this,require('_process'),require("buffer").Buffer)
-},{"_process":120,"bitcore-lib-innova":204,"bitcore-payment-protocol-innova":311,"buffer":47,"http":156,"https":100,"preconditions":361}],182:[function(require,module,exports){
+},{"_process":120,"bitcore-lib":204,"bitcore-payment-protocol":311,"buffer":47,"http":156,"https":100,"preconditions":361}],182:[function(require,module,exports){
 var $ = require('preconditions').singleton();
 var _ = require('lodash');
 
-var Bitcore = require('bitcore-lib-innova');
+var Bitcore = require('bitcore-lib');
 
 var Common = require('./common');
 var Utils = Common.Utils;
@@ -29284,7 +29284,7 @@ Verifier.checkTxProposal = function(credentials, txp, opts) {
 
 module.exports = Verifier;
 
-},{"./common":174,"./log":180,"bitcore-lib-innova":204,"lodash":353,"preconditions":361}],183:[function(require,module,exports){
+},{"./common":174,"./log":180,"bitcore-lib":204,"lodash":353,"preconditions":361}],183:[function(require,module,exports){
 arguments[4][2][0].apply(exports,arguments)
 },{"./asn1/api":184,"./asn1/base":186,"./asn1/constants":190,"./asn1/decoders":192,"./asn1/encoders":195,"bn.js":315,"dup":2}],184:[function(require,module,exports){
 var asn1 = require('../asn1');
@@ -34415,7 +34415,7 @@ module.exports={
         "spec": ">=1.2.0 <2.0.0",
         "type": "range"
       },
-      "F:\\_2017\\Github\\namespace\\innovacoin\\bitcore-wallet-client-innova\\node_modules\\bip38"
+      "F:\\_2017\\Github\\namespace\\MoneyByte\\bitcore-wallet-client\\node_modules\\bip38"
     ]
   ],
   "_from": "bigi@>=1.2.0 <2.0.0",
@@ -34450,7 +34450,7 @@ module.exports={
   "_shasum": "9c665a95f88b8b08fc05cfd731f561859d725825",
   "_shrinkwrap": null,
   "_spec": "bigi@^1.2.0",
-  "_where": "F:\\_2017\\Github\\namespace\\innovacoin\\bitcore-wallet-client-innova\\node_modules\\bip38",
+  "_where": "F:\\_2017\\Github\\namespace\\MoneyByte\\bitcore-wallet-client\\node_modules\\bip38",
   "bugs": {
     "url": "https://github.com/cryptocoinjs/bigi/issues"
   },
@@ -52882,13 +52882,13 @@ module.exports={
         "spec": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz",
         "type": "remote"
       },
-      "F:\\_2017\\Github\\namespace\\innovacoin\\bitcore-wallet-client-innova\\node_modules\\bitcore-lib-innova"
+      "F:\\_2017\\Github\\namespace\\MoneyByte\\bitcore-wallet-client\\node_modules\\bitcore-lib"
     ]
   ],
   "_from": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz",
   "_id": "elliptic@3.0.3",
   "_inCache": true,
-  "_location": "/bitcore-lib-innova/elliptic",
+  "_location": "/bitcore-lib/elliptic",
   "_phantomChildren": {
     "inherits": "2.0.1"
   },
@@ -52902,13 +52902,13 @@ module.exports={
     "type": "remote"
   },
   "_requiredBy": [
-    "/bitcore-lib-innova"
+    "/bitcore-lib"
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz",
   "_shasum": "865c9b420bfbe55006b9f969f97a0d2c44966595",
   "_shrinkwrap": null,
   "_spec": "elliptic@https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz",
-  "_where": "F:\\_2017\\Github\\namespace\\innovacoin\\bitcore-wallet-client-innova\\node_modules\\bitcore-lib-innova",
+  "_where": "F:\\_2017\\Github\\namespace\\MoneyByte\\bitcore-wallet-client\\node_modules\\bitcore-lib",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -53694,7 +53694,7 @@ arguments[4][103][0].apply(exports,arguments)
     var objToString = objectProto.toString;
 
     /** Used to restore the original `_` reference in `_.noConflict`. */
-    var oldInnova = root._;
+    var oldMoneyByte = root._;
 
     /** Used to detect if a method is native. */
     var reIsNative = RegExp('^' +
@@ -64346,7 +64346,7 @@ arguments[4][103][0].apply(exports,arguments)
      * var lodash = _.noConflict();
      */
     function noConflict() {
-      root._ = oldInnova;
+      root._ = oldMoneyByte;
       return this;
     }
 
@@ -66519,7 +66519,7 @@ module.exports.AES_ROUND_NOKEY_LE = function(X, Y) {
 ///////////////  Blake //////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -66745,7 +66745,7 @@ module.exports = function(input, format, output) {
 //////////////  BMW /////////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -67103,7 +67103,7 @@ module.exports = function(input, format, output) {
 ////////////  Cubehash //////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -67435,7 +67435,7 @@ module.exports = function(input, format, output) {
 ///////////////  Echo ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -67722,7 +67722,7 @@ module.exports = function(input, format, output) {
 ////////////  groestl ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -69144,7 +69144,7 @@ module.exports.string2Int32Buffer = function (s) {
 ///////////////  Jh /////////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -70145,7 +70145,7 @@ module.exports = methods;
 //////////////  Luffa ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -71065,7 +71065,7 @@ module.exports.xORTable = function(d, s1, s2, len) {
 ////////////  Shavite ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -71761,7 +71761,7 @@ module.exports = function(input, format, output) {
 //////////////  Simd ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Innova Team //////////
+////////// MoneyByte Team //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -72454,25 +72454,25 @@ module.exports={
   "_args": [
     [
       {
-        "raw": "bitcore-lib-innova@^0.14.3",
+        "raw": "bitcore-lib@^0.14.3",
         "scope": null,
-        "escapedName": "bitcore-lib-innova",
-        "name": "bitcore-lib-innova",
+        "escapedName": "bitcore-lib",
+        "name": "bitcore-lib",
         "rawSpec": "^0.14.3",
         "spec": ">=0.14.3 <0.15.0",
         "type": "range"
       },
-      "F:\\_2017\\Github\\namespace\\innovacoin\\bitcore-wallet-client-innova"
+      "F:\\_2017\\Github\\namespace\\MoneyByte\\bitcore-wallet-client"
     ]
   ],
-  "_from": "bitcore-lib-innova@>=0.14.3 <0.15.0",
-  "_id": "bitcore-lib-innova@0.14.3",
+  "_from": "bitcore-lib@>=0.14.3 <0.15.0",
+  "_id": "bitcore-lib@0.14.3",
   "_inCache": true,
-  "_location": "/bitcore-lib-innova",
+  "_location": "/bitcore-lib",
   "_nodeVersion": "7.7.1",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/bitcore-lib-innova-0.14.3.tgz_1502164167016_0.8122289911843836"
+    "tmp": "tmp/bitcore-lib-0.14.3.tgz_1502164167016_0.8122289911843836"
   },
   "_npmUser": {
     "name": "alex-werner",
@@ -72481,24 +72481,24 @@ module.exports={
   "_npmVersion": "4.1.2",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "bitcore-lib-innova@^0.14.3",
+    "raw": "bitcore-lib@^0.14.3",
     "scope": null,
-    "escapedName": "bitcore-lib-innova",
-    "name": "bitcore-lib-innova",
+    "escapedName": "bitcore-lib",
+    "name": "bitcore-lib",
     "rawSpec": "^0.14.3",
     "spec": ">=0.14.3 <0.15.0",
     "type": "range"
   },
   "_requiredBy": [
     "/",
-    "/bitcore-mnemonic-innova",
-    "/bitcore-payment-protocol-innova",
-    "/bitcore-wallet-service-innova"
+    "/bitcore-mnemonic",
+    "/bitcore-payment-protocol",
+    "/bitcore-wallet-service"
   ],
-  "_resolved": "https://registry.npmjs.org/bitcore-lib-innova/-/bitcore-lib-innova-0.14.3.tgz",
+  "_resolved": "https://registry.npmjs.org/bitcore-lib/-/bitcore-lib-0.14.3.tgz",
   "_shasum": "a785f5e18f4634ee75d9c2b624c65e2bef45bd95",
   "_shrinkwrap": {
-    "name": "bitcore-lib-innova",
+    "name": "bitcore-lib",
     "version": "0.14.3",
     "dependencies": {
       "bn.js": {
@@ -72555,8 +72555,8 @@ module.exports={
       }
     }
   },
-  "_spec": "bitcore-lib-innova@^0.14.3",
-  "_where": "F:\\_2017\\Github\\namespace\\innovacoin\\bitcore-wallet-client-innova",
+  "_spec": "bitcore-lib@^0.14.3",
+  "_where": "F:\\_2017\\Github\\namespace\\MoneyByte\\bitcore-wallet-client",
   "author": {
     "name": "BitPay",
     "email": "dev@bitpay.com"
@@ -72565,7 +72565,7 @@ module.exports={
     "request": "browser-request"
   },
   "bugs": {
-    "url": "https://github.com/innovacoin/bitcore-lib-innova/issues"
+    "url": "https://github.com/MoneyByte/bitcore-lib/issues"
   },
   "contributors": [
     {
@@ -72635,9 +72635,9 @@ module.exports={
     "sha512": "=0.0.1",
     "x11-hash-js": "^1.0.0"
   },
-  "description": "A pure and powerful JavaScript Innova library.",
+  "description": "A pure and powerful JavaScript MoneyByte library.",
   "devDependencies": {
-    "bitcore-build-innova": "github:innovacoin/bitcore-build-innova",
+    "bitcore-build": "github:MoneyByte/bitcore-build",
     "brfs": "^1.2.0",
     "browserify": "latest",
     "chai": "^1.10.0",
@@ -72647,10 +72647,10 @@ module.exports={
   "directories": {},
   "dist": {
     "shasum": "a785f5e18f4634ee75d9c2b624c65e2bef45bd95",
-    "tarball": "https://registry.npmjs.org/bitcore-lib-innova/-/bitcore-lib-innova-0.14.3.tgz"
+    "tarball": "https://registry.npmjs.org/bitcore-lib/-/bitcore-lib-0.14.3.tgz"
   },
   "gitHead": "570209714dcea77dd306108166d0891ca8736283",
-  "homepage": "https://github.com/innovacoin/bitcore-lib-innova",
+  "homepage": "https://github.com/MoneyByte/bitcore-lib",
   "keywords": [
     "innova",
     "transaction",
@@ -72679,12 +72679,12 @@ module.exports={
       "email": "ledniknoj@gmail.com"
     }
   ],
-  "name": "bitcore-lib-innova",
+  "name": "bitcore-lib",
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/innovacoin/bitcore-lib-innova.git"
+    "url": "git+https://github.com/MoneyByte/bitcore-lib.git"
   },
   "scripts": {
     "build": "gulp",
@@ -72716,13 +72716,13 @@ var spec = {
   }]
 };
 
-module.exports = require('bitcore-lib-innova').errors.extend(spec);
+module.exports = require('bitcore-lib').errors.extend(spec);
 
-},{"bitcore-lib-innova":204}],302:[function(require,module,exports){
+},{"bitcore-lib":204}],302:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var bitcore = require('bitcore-lib-innova');
+var bitcore = require('bitcore-lib');
 var BN = bitcore.crypto.BN;
 var unorm = require('unorm');
 var _ = bitcore.deps._;
@@ -73019,7 +73019,7 @@ Mnemonic.bitcore = bitcore;
 module.exports = Mnemonic;
 
 }).call(this,require("buffer").Buffer)
-},{"./errors":301,"./pbkdf2":303,"./words":307,"bitcore-lib-innova":204,"buffer":47,"unorm":386}],303:[function(require,module,exports){
+},{"./errors":301,"./pbkdf2":303,"./words":307,"bitcore-lib":204,"buffer":47,"unorm":386}],303:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -73371,7 +73371,7 @@ module.exports = PaymentProtocol;
 (function (Buffer){
 'use strict';
 
-var bitcore = require('bitcore-lib-innova');
+var bitcore = require('bitcore-lib');
 var protobufjs = require('protobufjs/dist/protobuf');
 var RootCerts = require('./rootcerts');
 var rfc5280 = require('asn1.js/rfc/5280');
@@ -73865,7 +73865,7 @@ PaymentProtocol.trusted = RootCerts.trusted;
 module.exports = PaymentProtocol;
 
 }).call(this,require("buffer").Buffer)
-},{"./rootcerts":314,"asn1.js/rfc/5280":197,"bitcore-lib-innova":204,"buffer":47,"protobufjs/dist/protobuf":366}],313:[function(require,module,exports){
+},{"./rootcerts":314,"asn1.js/rfc/5280":197,"bitcore-lib":204,"buffer":47,"protobufjs/dist/protobuf":366}],313:[function(require,module,exports){
 module.exports={
   "GlobalSign Root CA": "-----BEGIN CERTIFICATE-----\nMIIDdTCCAl2gAwIBAgILBAAAAAABFUtaw5QwDQYJKoZIhvcNAQEFBQAwVzELMAkGA1UEBhMC\nQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExEDAOBgNVBAsTB1Jvb3QgQ0ExGzAZBgNV\nBAMTEkdsb2JhbFNpZ24gUm9vdCBDQTAeFw05ODA5MDExMjAwMDBaFw0yODAxMjgxMjAwMDBa\nMFcxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMRAwDgYDVQQLEwdS\nb290IENBMRswGQYDVQQDExJHbG9iYWxTaWduIFJvb3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUA\nA4IBDwAwggEKAoIBAQDaDuaZjc6j40+Kfvvxi4Mla+pIH/EqsLmVEQS98GPR4mdmzxzdzxtI\nK+6NiY6arymAZavpxy0Sy6scTHAHoT0KMM0VjU/43dSMUBUc71DuxC73/OlS8pF94G3VNTCO\nXkNz8kHp1Wrjsok6Vjk4bwY8iGlbKk3Fp1S4bInMm/k8yuX9ifUSPJJ4ltbcdG6TRGHRjcdG\nsnUOhugZitVtbNV4FpWi6cgKOOvyJBNPc1STE4U6G7weNLWLBYy5d4ux2x8gkasJU26Qzns3\ndLlwR5EiUWMWea6xrkEmCMgZK9FGqkjWZCrXgzT/LCrBbBlDSgeF59N89iFo7+ryUp9/k5DP\nAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRg\ne2YaRQ2XyolQL30EzTSo//z9SzANBgkqhkiG9w0BAQUFAAOCAQEA1nPnfE920I2/7LqivjTF\nKDK1fPxsnCwrvQmeU79rXqoRSLblCKOzyj1hTdNGCbM+w6DjY1Ub8rrvrTnhQ7k4o+YviiY7\n76BQVvnGCv04zcQLcFGUl5gE38NflNUVyRRBnMRddWQVDf9VMOyGj/8N7yy5Y0b2qvzfvGn9\nLhJIZJrglfCm7ymPAbEVtQwdpf5pLGkkeB6zpxxxYu7KyJesF12KwvhHhm4qxFYxldBniYUr\n+WymXUadDKqC5JlR3XC321Y9YeRq4VzW9v493kHMB65jUr9TU/Qr6cf9tveCX4XSQRjbgbME\nHMUfpIBvFSDJ3gyICh3WZlXi/EjJKSZp4A==\n-----END CERTIFICATE-----\n",
   "GlobalSign Root CA - R2": "-----BEGIN CERTIFICATE-----\nMIIDujCCAqKgAwIBAgILBAAAAAABD4Ym5g0wDQYJKoZIhvcNAQEFBQAwTDEgMB4GA1UECxMX\nR2xvYmFsU2lnbiBSb290IENBIC0gUjIxEzARBgNVBAoTCkdsb2JhbFNpZ24xEzARBgNVBAMT\nCkdsb2JhbFNpZ24wHhcNMDYxMjE1MDgwMDAwWhcNMjExMjE1MDgwMDAwWjBMMSAwHgYDVQQL\nExdHbG9iYWxTaWduIFJvb3QgQ0EgLSBSMjETMBEGA1UEChMKR2xvYmFsU2lnbjETMBEGA1UE\nAxMKR2xvYmFsU2lnbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKbPJA6+Lm8o\nmUVCxKs+IVSbC9N/hHD6ErPLv4dfxn+G07IwXNb9rfF73OX4YJYJkhD10FPe+3t+c4isUoh7\nSqbKSaZeqKeMWhG8eoLrvozps6yWJQeXSpkqBy+0Hne/ig+1AnwblrjFuTosvNYSuetZfeLQ\nBoZfXklqtTleiDTsvHgMCJiEbKjNS7SgfQx5TfC4LcshytVsW33hoCmEofnTlEnLJGKRILzd\nC9XZzPnqJworc5HGnRusyMvo4KD0L5CLTfuwNhv2GXqF4G3yYROIXJ/gkwpRl4pazq+r1feq\nCapgvdzZX99yqWATXgAByUr6P6TqBwMhAo6CygPCm48CAwEAAaOBnDCBmTAOBgNVHQ8BAf8E\nBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUm+IHV2ccHsBqBt5ZtJot39wZhi4w\nNgYDVR0fBC8wLTAroCmgJ4YlaHR0cDovL2NybC5nbG9iYWxzaWduLm5ldC9yb290LXIyLmNy\nbDAfBgNVHSMEGDAWgBSb4gdXZxwewGoG3lm0mi3f3BmGLjANBgkqhkiG9w0BAQUFAAOCAQEA\nmYFThxxol4aR7OBKuEQLq4GsJ0/WwbgcQ3izDJr86iw8bmEbTUsp9Z8FHSbBuOmDAGJFtqkI\nk7mpM0sYmsL4h4hO291xNBrBVNpGP+DTKqttVCL1OmLNIG+6KYnX3ZHu01yiPqFbQfXf5WRD\nLenVOavSot+3i9DAgBkcRcAtjOj4LaR0VknFBbVPFd5uRHg5h6h+u/N5GJG79G+dwfCMNYxd\nAfvDbbnvRG15RjF+Cv6pgsH/76tuIMRQyV+dTZsXjAzlAcmgQWpzU/qlULRuJQ/7TBj0/VLZ\njmmx6BEP3ojY+x1J96relc8geMJgEtslQIxq/H5COEBkEveegeGTLg==\n-----END CERTIFICATE-----\n",
@@ -84863,7 +84863,7 @@ module.exports = require("./src/preconditions");
     var objectProto = Object.prototype;
 
     /** Used to restore the original `_` reference in `noConflict` */
-    var oldInnova = context._;
+    var oldMoneyByte = context._;
 
     /** Used to resolve the internal [[Class]] of values */
     var toString = objectProto.toString;
@@ -90352,7 +90352,7 @@ module.exports = require("./src/preconditions");
      * var lodash = _.noConflict();
      */
     function noConflict() {
-      context._ = oldInnova;
+      context._ = oldMoneyByte;
       return this;
     }
 
@@ -99454,36 +99454,36 @@ UChar.udata={
 
 },{}],387:[function(require,module,exports){
 module.exports={
-  "name": "bitcore-wallet-client-innova",
-  "description": "Client for bitcore-wallet-service-innova",
+  "name": "bitcore-wallet-client",
+  "description": "Client for bitcore-wallet-service",
   "author": "BitPay Inc",
   "version": "5.1.2",
   "license": "MIT",
   "keywords": [
     "innova",
-    "copay-innova",
+    "copay",
     "multisig",
     "wallet",
     "client",
-    "bitcore-innova",
+    "bitcore",
     "BWS",
     "BWC"
   ],
   "engine": "node >= 0.12.0",
   "main": "index.js",
   "repository": {
-    "url": "git+ssh://git@github.com/innovacoin/bitcore-wallet-client-innova.git",
+    "url": "git+ssh://git@github.com/MoneyByte/bitcore-wallet-client.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/innovacoin/bitcore-wallet-client-innova/issues"
+    "url": "https://github.com/MoneyByte/bitcore-wallet-client/issues"
   },
   "dependencies": {
     "async": "^0.9.0",
     "bip38": "^1.3.0",
-    "bitcore-lib-innova": "^0.14.3",
-    "bitcore-mnemonic-innova": "^1.2.3",
-    "bitcore-payment-protocol-innova": "github:innovacoin/bitcore-payment-protocol-innova#master_v1.2.2",
+    "bitcore-lib": "^0.14.3",
+    "bitcore-mnemonic": "^1.2.3",
+    "bitcore-payment-protocol": "github:MoneyByte/bitcore-payment-protocol#master_v1.2.2",
     "json-stable-stringify": "^1.0.0",
     "lodash": "^3.3.1",
     "preconditions": "^1.0.8",
@@ -99491,7 +99491,7 @@ module.exports={
     "superagent": "^3.4.1"
   },
   "devDependencies": {
-    "bitcore-wallet-service-innova": "^1.18.0",
+    "bitcore-wallet-service": "^1.18.0",
     "browserify": "^13.1.0",
     "chai": "^1.9.1",
     "coveralls": "^2.11.2",
@@ -99517,7 +99517,7 @@ module.exports={
     "Ivan Socolsky <ivan@bitpay.com>",
     "Matias Alejo Garcia <ematiu@gmail.com>"
   ],
-  "homepage": "https://github.com/innovacoin/bitcore-wallet-client-innova#readme",
+  "homepage": "https://github.com/MoneyByte/bitcore-wallet-client#readme",
   "directories": {
     "test": "test"
   }

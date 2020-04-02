@@ -1,34 +1,34 @@
-# Bitcore-Innova Wallet Client
+# Bitcore-MoneyByte Wallet Client
 
-[![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-client-innova.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-client-innova)
-[![Build Status](https://img.shields.io/travis/innovacoin/bitcore-wallet-client-innova.svg?branch=master&style=flat-square)](https://travis-ci.org/innovacoin/bitcore-wallet-client-innova)
-[![Coverage Status](https://coveralls.io/repos/innovacoin/bitcore-wallet-client-innova/badge.svg)](https://coveralls.io/r/innovacoin/bitcore-wallet-client-innova)
+[![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-client.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-client)
+[![Build Status](https://img.shields.io/travis/MoneyByte/bitcore-wallet-client.svg?branch=master&style=flat-square)](https://travis-ci.org/MoneyByte/bitcore-wallet-client)
+[![Coverage Status](https://coveralls.io/repos/MoneyByte/bitcore-wallet-client/badge.svg)](https://coveralls.io/r/MoneyByte/bitcore-wallet-client)
 
-The *official* client library for [bitcore-wallet-service-innova] (https://github.com/innovacoin/bitcore-wallet-service-innova).
+The *official* client library for [bitcore-wallet-service] (https://github.com/MoneyByte/bitcore-wallet-service).
 
 ## Description
 
-This package communicates with BWS [bitcore-innova wallet service](https://github.com/innovacoin/bitcore-wallet-service-innova) using the REST API. All REST endpoints are wrapped as simple async methods. All relevant responses from BWS are checked independently by the peers, thus the importance of using this library when talking to a third party BWS instance.
+This package communicates with BWS [bitcore wallet service](https://github.com/MoneyByte/bitcore-wallet-service) using the REST API. All REST endpoints are wrapped as simple async methods. All relevant responses from BWS are checked independently by the peers, thus the importance of using this library when talking to a third party BWS instance.
 
-See [bitcore-wallet-innova] (https://github.com/innovacoin/bitcore-wallet-innova) for a simple CLI wallet implementation that relays on BWS and uses bitcore-wallet-client-innova.
+See [bitcore-wallet] (https://github.com/MoneyByte/bitcore-wallet) for a simple CLI wallet implementation that relays on BWS and uses bitcore-wallet-client.
 
 ## Get Started
 
-You can start using bitcore-wallet-client-innova in any of these two ways:
+You can start using bitcore-wallet-client in any of these two ways:
 
-* via [Bower](http://bower.io/): by running `bower install bitcore-wallet-client-innova` from your console
-* or via [NPM](https://www.npmjs.com/package/bitcore-wallet-client-innova): by running `npm install bitcore-wallet-client-innova` from your console.
+* via [Bower](http://bower.io/): by running `bower install bitcore-wallet-client` from your console
+* or via [NPM](https://www.npmjs.com/package/bitcore-wallet-client): by running `npm install bitcore-wallet-client` from your console.
 
 ## Example
 
-Start your own local [bitcore-innova wallet service](https://github.com/innovacoin/bitcore-wallet-service-innova) instance. In this example we assume you have `bitcore-wallet-service-innova` running on your `localhost:3232`.
+Start your own local [bitcore wallet service](https://github.com/MoneyByte/bitcore-wallet-service) instance. In this example we assume you have `bitcore-wallet-service` running on your `localhost:3232`.
 
 Then create two files `irene.js` and `tomas.js` with the content below:
 
 **irene.js**
 
 ``` javascript
-var Client = require('bitcore-wallet-client-innova');
+var Client = require('bitcore-wallet-client');
 
 
 var fs = require('fs');
@@ -54,7 +54,7 @@ client.createWallet("My Wallet", "Irene", 2, 2, {network: 'testnet'}, function(e
 
 ``` javascript
 
-var Client = require('bitcore-wallet-client-innova');
+var Client = require('bitcore-wallet-client');
 
 
 var fs = require('fs');
@@ -104,10 +104,10 @@ client.joinWallet(secret, "Tomas", {}, function(err, wallet) {
 });
 ```
 
-Install `bitcore-wallet-client-innova` before start:
+Install `bitcore-wallet-client` before start:
 
 ```
-npm i bitcore-wallet-client-innova
+npm i bitcore-wallet-client
 ```
 
 Create a new wallet with the first script:
@@ -785,7 +785,7 @@ Returns exchange rate for the specified currency & timestamp.
 
 **opts.ts**: `Date`, A timestamp to base the rate on (default Date.now()).
 
-**opts.provider**: `String`, A provider of exchange rates (default 'innovacoin').
+**opts.provider**: `String`, A provider of exchange rates (default 'MoneyByte').
 
 **Returns**: `Object`, rates - The exchange rate.
 
